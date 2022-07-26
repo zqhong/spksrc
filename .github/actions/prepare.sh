@@ -74,8 +74,8 @@ all_noarch=$(find spk/ -maxdepth 2 -mindepth 2 -name "Makefile" -exec grep -Ho "
 
 # separate noarch and arch specific packages
 # and filter out packages that are removed or do not exist (e.g. nzbdrone)
-arch_packages=
-noarch_packages=
+arch_packages=("open-vm-tools")
+noarch_packages=("open-vm-tools")
 for package in ${packages}
 do
     if [ -f "./spk/${package}/Makefile" ]; then
