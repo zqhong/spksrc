@@ -6,6 +6,9 @@ PKG_DIST_NAME = $(PKG_NAME)-$(PKG_VERS)-$(PKG_BUILD).$(PKG_EXT)
 PKG_DIST_SITE = https://github.com/vmware/open-vm-tools/releases/download/stable-$(PKG_VERS)
 PKG_DIR = $(PKG_NAME)-$(PKG_VERS)-$(PKG_BUILD)
 
+# even some archs might sucessfully build, only x86_64 does support VMware virtualization.
+UNSUPPORTED_ARCHS = $(i686_ARCHS) $(PPC_ARCHS) $(ARM_ARCHS)
+
 DEPENDS = cross/libmspack cross/glib cross/openssl cross/fuse cross/libtirpc cross/procps-ng cross/icu
 
 HOMEPAGE = https://github.com/vmware/open-vm-tools
